@@ -2,6 +2,8 @@
 
 This repo contains an install script that can be used to install [RancherOS](http://rancher.com/rancher-os/) on [Linode](https://www.linode.com). While other ways are possible (like installing first to a local VM, then `dd`ing the results to the Linode disk), this method is very easy and quick. It uses the Finnix rescue mode to perform the installation using the install script from the [RancherOS repo](https://github.com/rancher/os). 
 
+This guide assumes that your Linode is running the *KVM* hyporvisor. Some Linode locations still deploy new disks using *XEN*. Upgrade your new node to *KVM* by clicking the link at the bottom of the sidebar. 
+
 ## Installation steps
 
 * Create a new Linode
@@ -19,6 +21,7 @@ This repo contains an install script that can be used to install [RancherOS](htt
 * On tab Rescue, check that */dev/sda* is set to "RancherOS Disk" and click *Reboot into Rescue Mode*
 * On tab Remote Acces, click the *Lish via SSH* link
 * Log in and enter the name of your Linode to get into its rescue console
+* If you you don´t have a *clould-config.yml* file already, create one (see the <a href="http://docs.rancher.com/os/cloud-config/">Cloud Config guide</a>)
 * In the Finnix shell, run the following:
 
 ```
@@ -33,7 +36,9 @@ chmod +x install.sh
 
 * Wait until the install script is finished
 * On tab *Dashboard*, click *Reboot*
-* Your Linode will now reboot into RancherOS and you'll be able to SSH with user rancher using the SSH keys you supplied in the cloud-config file.
+* Your Linode will now reboot into RancherOS and you'll be able to SSH with user *rancher* using the SSH keys you supplied in the cloud-config file.
+
+To run the Rancher management platform run see the <a href="http://docs.rancher.com/os/quick-start-guide/#using-rancher-management-platform-with-rancheros">Rancher documentation</a>
 
 ## Command line arguments
 
