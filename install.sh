@@ -47,6 +47,7 @@ then
 else
 	VERSION=$(echo "${VERSION}" | sed 's/^v*/v/')
 fi
+export VERSION
 
 git clone --branch "${VERSION}" https://github.com/rancher/os.git rancheros
 ln -fs ../../build.conf rancheros/scripts/installer/build.conf
