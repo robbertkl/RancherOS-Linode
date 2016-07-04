@@ -19,7 +19,7 @@ This guide assumes that your Linode is running the *KVM* hypervisor. Some Linode
   * Set ALL items under *Filesystem/Boot Helpers* to "No"
   * Click *Save Changes*
 * On tab Rescue, check that */dev/sda* is set to "RancherOS Disk" and click *Reboot into Rescue Mode*
-* On tab Remote Acces, click the *Lish via SSH* link
+* On tab Remote Access, click the *Lish via SSH* link
 * Log in and enter the name of your Linode to get into its rescue console
 * If you don't have a *cloud-config.yml* file already, create one (see the [Cloud Config guide](http://docs.rancher.com/os/cloud-config/))
 * In the Finnix shell, run the following:
